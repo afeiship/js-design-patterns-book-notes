@@ -79,6 +79,7 @@ Interface.ensureImplements = function(inObject, inImplements){
     }
   }
 };
+
 ```
 
 
