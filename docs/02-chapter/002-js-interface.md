@@ -65,7 +65,7 @@ var Interface = function(inName,inMethods){
 
 Interface.ensureImplements = function(inObject, inImplements){
   var len = inImplements.length;
-  for(var i=1; i<len; i++){
+  for(var i=0; i<len; i++){
     var interface = inImplements[i];
     if(interface.constructor !== Interface ){
       throw new Error('Function Interface.ensureImplements expect args;')
@@ -73,7 +73,7 @@ Interface.ensureImplements = function(inObject, inImplements){
     var methods = interface.methods;
     for(var j=0; j<methods.length; j++){
       var method = methods[j];
-      if(!inObject[method] || typeof inObject[method]!==='function'){
+      if(!inObject[method] || typeof inObject[method]!=='function'){
         throw new Error('Interface ' + method + ' must be implement!');
       }
     }
