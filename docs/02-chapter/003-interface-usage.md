@@ -14,3 +14,10 @@ function displayRoute(mapInstance){
   mapInstance.draw();
 };
 ```
+
+
+## 依赖接口的设计模式
+1. 工厂模式
+2. 组合模式
+3. 装饰器模式
+4. 命令模式
