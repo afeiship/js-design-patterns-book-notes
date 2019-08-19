@@ -5,6 +5,10 @@
 ## Pure prototype tree
 这种试可以生成很漂亮的 prototype 树
 
+<!-- var isbn -->
+- isbn 为字段
+- setIsbn/getIsbn 这种才是真正的属性
+- 这个就是面向对象里的： filed/property
 
 ```js
 var Book = function(inIsbn,inTitle,inAuthor){
