@@ -4,10 +4,10 @@
 function Person(name){
   this.name = name;
 }
+
 Person.prototype.getName = function(){
   return this.name;
 };
-
 
 // Author < Person
 function Author(name,books){
