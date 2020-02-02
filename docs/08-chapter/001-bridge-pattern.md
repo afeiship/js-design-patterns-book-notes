@@ -1,5 +1,11 @@
-// input devices
+# bridge pattern
 
+- 在实现API的时候，桥接模式非常有用
+- 将抽象与实现分开，以便二者独立变化
+
+
+```js
+// input devices
 var Gestures = function(output) {
   this.output = output;
 
@@ -99,3 +105,8 @@ function run() {
 
   log.show();
 }
+
+```
+
+## resources
+- https://www.dofactory.com/javascript/bridge-design-pattern
