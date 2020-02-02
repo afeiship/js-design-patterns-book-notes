@@ -1,0 +1,38 @@
+# decorator pattern
+
+## 场景
+- 为对象添加特性的技术
+
+```js
+import { decorate, warn } from './private/utils';
+
+const DEFAULT_MSG = 'This function will be removed in future versions.';
+
+function handleDescriptor(target, key, descriptor, [msg = DEFAULT_MSG, options = {}]) {
+  if (typeof descriptor.value !== 'function') {
+    throw new SyntaxError('Only functions can be marked as deprecated');
+  }
+  
+  const methodSignature = `${target.constructor.name}#${key}`;
+  
+  if (options.url) {
+    msg += `\n\n    See ${options.url} for more details.\n\n`;
+  }
+      
+  return {
+    ...descriptor,
+    value: function deprecationWrapper() {
+      warn(`DEPRECATION ${methodSignature}: ${msg}`);
+      return descriptor.value.apply(this, arguments);
+    }
+  };
+}
+
+export default function deprecate(...args) {
+  return decorate(handleDescriptor, args);
+}
+```
+
+
+## resources
+- https://imweb.io/topic/5b1403bbd4c96b9b1b4c4e9e
