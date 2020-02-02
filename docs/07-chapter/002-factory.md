@@ -29,3 +29,4 @@ BicycleShop.prototype = {
 - 在子类中实现相对应的 create 方法
 
 ## 缺点
+- 
